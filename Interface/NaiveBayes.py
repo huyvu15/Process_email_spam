@@ -71,53 +71,53 @@ class NaiveBayes:
         return p_ham_given_message > p_spam_given_message
     
 # Sử dụng mô hình
-if __name__ == "__main__":
-    # Đọc dữ liệu
-    sms_spam = pd.read_csv('SMSSpamCollection', sep='\t', header=None, names=['Label', 'SMS'])
+# if __name__ == "__main__":
+#     # Đọc dữ liệu
+#     sms_spam = pd.read_csv('SMSSpamCollection', sep='\t', header=None, names=['Label', 'SMS'])
 
-    # Randomize the dataset
-    data_randomized = sms_spam.sample(frac=1, random_state=1)
-    # Calculate index for split
-    training_test_index = round(len(data_randomized) * 0.8)
-    # Split into training and test sets
-    training_set = data_randomized[:training_test_index].reset_index(drop=True)
+#     # Randomize the dataset
+#     data_randomized = sms_spam.sample(frac=1, random_state=1)
+#     # Calculate index for split
+#     training_test_index = round(len(data_randomized) * 0.8)
+#     # Split into training and test sets
+#     training_set = data_randomized[:training_test_index].reset_index(drop=True)
 
-    # Tạo và huấn luyện mô hình
-    spam_classifier = NaiveBayes(alpha=1)
-    spam_classifier.train(training_set)
+#     # Tạo và huấn luyện mô hình
+#     spam_classifier = NaiveBayes(alpha=1)
+#     spam_classifier.train(training_set)
 
-    mess = """
-WorldQuant BRAIN Việt Nam hân hạnh được tổ chức buổi gặp gỡ tháng 12/2023 dành riêng cho các bạn BRAIN consultant onboard trong năm 2023!
+#     # Sử dụng mô hình để phân loại tin nhắn
+#     mess = """
+#     WorldQuant BRAIN Việt Nam hân hạnh được tổ chức buổi gặp gỡ tháng 12/2023 dành riêng cho các bạn BRAIN consultant onboard trong năm 2023!
 
-Do số lượng chỗ ngồi giới hạn, các bạn hãy nhanh chóng đăng ký ngay nào!
-Đăng ký tham dự tại đây
-Chương trình sự kiện
-Cơ hội gặp gỡ các thành viên khác của cộng đồng BRAIN cũng như các WorldQuant researcher.
-Cập nhật thêm nhiều sáng kiến mới
-Cơ hội học tập thực tiễn với các phần nội dung được hướng dẫn bởi WorldQuant researcher
-Mini-game với cơ hội nhận được các phần quà hấp dẫn
-Tham quan văn phòng WorldQuant và dùng bữa trưa
+#     Do số lượng chỗ ngồi giới hạn, các bạn hãy nhanh chóng đăng ký ngay nào!
+#     Đăng ký tham dự tại đây
+#     Chương trình sự kiện
+#     Cơ hội gặp gỡ các thành viên khác của cộng đồng BRAIN cũng như các WorldQuant researcher.
+#     Cập nhật thêm nhiều sáng kiến mới
+#     Cơ hội học tập thực tiễn với các phần nội dung được hướng dẫn bởi WorldQuant researcher
+#     Mini-game với cơ hội nhận được các phần quà hấp dẫn
+#     Tham quan văn phòng WorldQuant và dùng bữa trưa
 
- Tại Hà Nội
-Ngày & Giờ: Thứ Bảy, ngày 23/12/2023, vào lúc 09:00 sáng – 12:00 trưa
-Địa điểm: Văn phòng WorldQuant tại tòa nhà Lotte Tower, Quận Ba Đình
+#     Tại Hà Nội
+#     Ngày & Giờ: Thứ Bảy, ngày 23/12/2023, vào lúc 09:00 sáng – 12:00 trưa
+#     Địa điểm: Văn phòng WorldQuant tại tòa nhà Lotte Tower, Quận Ba Đình
 
- Tại Thành phố Hồ Chí Minh
-Ngày & Giờ: Thứ Bảy ngày 16/12/2023, vào lúc 09:00 sáng – 12:00 trưa
-Địa điểm: Văn phòng WorldQuant tại tòa nhà Saigon Centre, Quận 1
+#     Tại Thành phố Hồ Chí Minh
+#     Ngày & Giờ: Thứ Bảy ngày 16/12/2023, vào lúc 09:00 sáng – 12:00 trưa
+#     Địa điểm: Văn phòng WorldQuant tại tòa nhà Saigon Centre, Quận 1
 
-Nếu bạn có bất kỳ câu hỏi nào, vui lòng gửi về địa chỉ email: vietnam@worldquantbrain.com
+#     Nếu bạn có bất kỳ câu hỏi nào, vui lòng gửi về địa chỉ email: vietnam@worldquantbrain.com
 
-Rất mong sẽ được tiếp đón bạn.
+#     Rất mong sẽ được tiếp đón bạn.
 
-Trân trọng,
-WorldQuant BRAIN Việt Nam
+#     Trân trọng,
+#     WorldQuant BRAIN Việt Nam
 
- """
+#     """
 
-    result = spam_classifier.classify(mess)
-    if result:
-        print("Ham")
-    else:
-        print("Spam")
-
+#     result = spam_classifier.classify(mess)
+#     if result:
+#         print("Ham")
+#     else:
+#         print("Spam")

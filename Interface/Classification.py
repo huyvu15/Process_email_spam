@@ -81,16 +81,16 @@ def classify(message):
 
 mess = """
 WorldQuant BRAIN Việt Nam hân hạnh được tổ chức buổi gặp gỡ tháng 12/2023 dành riêng cho các bạn BRAIN consultant onboard trong năm 2023!
-"""
-# Do số lượng chỗ ngồi giới hạn, các bạn hãy nhanh chóng đăng ký ngay nào!
-# Đăng ký tham dự tại đây
-# Chương trình sự kiện
-# Cơ hội gặp gỡ các thành viên khác của cộng đồng BRAIN cũng như các WorldQuant researcher.
-# Cập nhật thêm nhiều sáng kiến mới
-# Cơ hội học tập thực tiễn với các phần nội dung được hướng dẫn bởi WorldQuant researcher
-# Mini-game với cơ hội nhận được các phần quà hấp dẫn
 
-# """
+Do số lượng chỗ ngồi giới hạn, các bạn hãy nhanh chóng đăng ký ngay nào!
+Đăng ký tham dự tại đây
+Chương trình sự kiện
+Cơ hội gặp gỡ các thành viên khác của cộng đồng BRAIN cũng như các WorldQuant researcher.
+Cập nhật thêm nhiều sáng kiến mới
+Cơ hội học tập thực tiễn với các phần nội dung được hướng dẫn bởi WorldQuant researcher
+Mini-game với cơ hội nhận được các phần quà hấp dẫn
+
+"""
 
 if classify(mess):
     print("Ham")
