@@ -7,7 +7,7 @@ import os
 from PIL import Image, ImageTk
 import random
 import pandas as pd
-from NaiveBayes import NaiveBayes  # Đảm bảo bạn đã import đúng thư viện NaiveBayes
+from NaiveBayes import NaiveBayes  
 
 class GmailServer:
     def __init__(self):
@@ -95,7 +95,7 @@ class GmailServer:
             # Phân loại tin nhắn thành Ham hoặc Spam
             result = spam_classifier.classify(message_content)
             if result == False:
-                # Phân loại là Spam
+                # Phân loại là Spam3
                 print(f"Predicted: Spam - Actual: {message_content}")
                 message = f"{self.message_index}. {timestamp} - Client (Spam): {message_content}\n"
                 self.spam_messages.append((message, avatar_image))

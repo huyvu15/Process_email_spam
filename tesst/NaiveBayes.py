@@ -114,8 +114,10 @@ Trân trọng,
 WorldQuant BRAIN Việt Nam
 
  """
+ 
+    mess1 = "10%"
 
-    result = spam_classifier.classify(mess)
+    result = spam_classifier.classify(mess1)
     if result:
         print("Ham")
     else:
