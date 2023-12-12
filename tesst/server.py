@@ -101,7 +101,6 @@ class GmailServer:
                 self.spam_messages.append((message, avatar_image))
                 self.spam_listbox.insert(tk.END, f"{self.message_index}. Client - {timestamp}")
             else:
-                # Phân loại là Ham
                 print(f"Predicted: Ham - Actual: {message_content}")
                 message = f"{self.message_index}. {timestamp} - Client (Ham): {message_content}\n"
                 self.ham_messages.append((message, avatar_image))
@@ -172,7 +171,6 @@ class GmailServer:
         self.root.mainloop()
 
 if __name__ == "__main__":
-    # Cần cung cấp đường dẫn đúng đến tập tin SMSSpamCollection và thư mục Image
     sms_spam = pd.read_csv('SMSSpamCollection', sep='\t', header=None, names=['Label', 'SMS'])
     data_randomized = sms_spam.sample(frac=1, random_state=1)
     training_test_index = round(len(data_randomized) * 0.8)
