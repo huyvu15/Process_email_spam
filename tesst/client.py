@@ -21,6 +21,14 @@ class GmailClient:
         compose_frame = ttk.Frame(self.root, padding=(10, 10, 10, 10))
         compose_frame.grid(row=0, column=0, sticky="nsew")
 
+        background = "Image/61.jpg"
+
+        # Đọc hình ảnh và chuyển đổi thành đối tượng hình ảnh có thể sử dụng trong Tkinter
+        bg = tk.PhotoImage.open(file = background)
+  
+        # Show image using label 
+        label1 = Label(self.root, image = bg) 
+        label1.place(x = 0, y = 0)
         # To
         ttk.Label(compose_frame, text="To:").grid(row=0, column=0, sticky="w")
         to_choices = ["Jennie", "Roses", "Jisoo", "Lisa"]
